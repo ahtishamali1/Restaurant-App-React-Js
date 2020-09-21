@@ -1,0 +1,46 @@
+{
+  "login":[
+    {"name":"captain",
+    "password":"1234"}
+  ],
+  "restaurant": [
+    {
+      "name": "Ahtisham",
+      "email": "ahtishamali2014@gmail.com",
+      "rating": "5.0",
+      "address": "Sialkot",
+      "id": 1
+    },
+    {
+      "name": "Ahtisham Ali",
+      "email": "ahtishamali2017@gmail.com",
+      "rating": "4.0",
+      "address": "Sahowala",
+      "id": 2
+    }
+    ,
+    {
+      "name": "Ali",
+      "email": "ahtishamali2020@gmail.com",
+      "rating": "4.5",
+      "address": "Sambrial Sialkot",
+      "id": 3
+    }
+    ,
+    {
+      "name": "Shami",
+      "email": "ahtishamali2020@gmail.com",
+      "rating": "3.0",
+      "address": "Sambrial",
+      "id": 4
+    }
+    ,
+    {
+      "name": "Mian",
+      "email": "ahtishamali2014@gmail.com",
+      "rating": "4.9",
+      "address": "Gujranawala",
+      "id": 5
+    }
+  ]
+}
