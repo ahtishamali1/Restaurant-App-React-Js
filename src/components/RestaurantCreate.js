@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import NavbarMenu from './NavbarMenu'
+import {Container} from "react-bootstrap"
 export default class RestaurantCreate extends Component {
     constructor(){
         super();
@@ -11,7 +12,7 @@ export default class RestaurantCreate extends Component {
         } 
     }
     create(){
-        fetch("http://localhost:3000/restaurant",
+        fetch("http://localhost:4000/restaurant",
         {
             method: "Post",
             headers:{
@@ -28,6 +29,8 @@ result.json().then((resp)=>{
     render() {
         return (
             <div>
+                <Container>
+                 <NavbarMenu />
                  <h1>Restaurant Create</h1> 
                  <div>
                      <input onChange={(event)=>{this.setState({name:event.target.value})} } placeholder="Restaurant Name"/> <br /> <br/>
@@ -39,7 +42,9 @@ result.json().then((resp)=>{
                      <input onChange={(event)=>{this.setState({address:event.target.value})} } placeholder="Restaurant Address"/> <br /> <br/>
                      <button onClick={()=>{this.create()}}>Add Restaurant</button>
                  </div>
+                 </Container>
             </div>
+           
         )
     }
 }

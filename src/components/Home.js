@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import {Container, Jumbotron} from "react-bootstrap"
+import NavbarMenu from './NavbarMenu'
 export default class Home extends Component {
     render() {
         return (
                  <div>
                      <Container>
+                     <NavbarMenu />
               <h1>Home</h1> 
              
 

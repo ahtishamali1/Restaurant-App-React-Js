@@ -3,6 +3,8 @@ import { Container, Table, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import NavbarMenu from './NavbarMenu'
+import {Container} from "react-bootstrap"
 export default class RestaurantSearch extends Component {
   constructor() {
     super();
@@ -15,7 +17,7 @@ export default class RestaurantSearch extends Component {
   search(key) {
     console.warn(key);
     this.setState = ({ lastSearch: key })
-    fetch("http://localhost:3000/restaurant?q=" + key).then((data) => {
+    fetch("http://localhost:4000/restaurant?q=" + key).then((data) => {
       data.json().then((resp) => {
         console.warn("resp", resp);
         if (resp.length > 0) {
@@ -30,7 +32,7 @@ export default class RestaurantSearch extends Component {
   }
 
   delete(id) {
-    fetch("http://localhost:3000/restaurant/" + id, {
+    fetch("http://localhost:4000/restaurant/" + id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -46,6 +48,7 @@ export default class RestaurantSearch extends Component {
   render() {
     return (
       <Container>
+         <NavbarMenu />
         <h1>Restaurant Search</h1>
 
         <Form.Control

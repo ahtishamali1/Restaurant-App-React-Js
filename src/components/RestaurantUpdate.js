@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import NavbarMenu from './NavbarMenu'
+import {Container} from "react-bootstrap"
 export default class RestaurantUpdate extends Component {
   constructor() {
     super();
@@ -11,9 +12,10 @@ export default class RestaurantUpdate extends Component {
       id: null,
     };
   }
+  
   componentDidMount() {
     fetch(
-      "http://localhost:3000/restaurant/"+this.props.match.params.id
+      "http://localhost:4000/restaurant/"+this.props.match.params.id
     ).then((response) => {
       response.json().then((result) => {
         console.log(result);
@@ -28,7 +30,7 @@ export default class RestaurantUpdate extends Component {
     });
   }
   update() {
-    fetch("http://localhost:3000/restaurant/" + this.state.id, {
+    fetch("http://localhost:4000/restaurant/" + this.state.id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -49,6 +51,8 @@ export default class RestaurantUpdate extends Component {
     console.warn(this.props.match.params.id);
     return (
       <div>
+        <Container>
+         <NavbarMenu />
         <h1>Restaurant Update</h1>
         <div>
           <input
@@ -91,6 +95,7 @@ export default class RestaurantUpdate extends Component {
             Update Restaurant
           </button>
         </div>
+        </Container>
       </div>
     );
   }

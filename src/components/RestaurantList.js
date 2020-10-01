@@ -3,7 +3,8 @@ import { Table } from "react-bootstrap";
 import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faEdit,faTrash } from '@fortawesome/free-solid-svg-icons'
-
+import NavbarMenu from './NavbarMenu'
+import {Container} from "react-bootstrap"
 export default class RestaurantList extends Component {
   constructor() {
     super();
@@ -15,7 +16,7 @@ export default class RestaurantList extends Component {
     this.getdata()
   }
   getdata(){
-    fetch("http://localhost:3000/restaurant").then((response) => {
+    fetch("http://localhost:4000/restaurant").then((response) => {
       response.json().then((result) => {
         this.setState({ list: result });
       });
@@ -23,7 +24,7 @@ export default class RestaurantList extends Component {
   }
   delete(id)
   {
-    fetch('http://localhost:3000/restaurant/'+id,
+    fetch('http://localhost:4000/restaurant/'+id,
     {
       method: "DELETE",
       headers: {
@@ -41,7 +42,9 @@ export default class RestaurantList extends Component {
   render() {
     console.warn(this.state);
     return (
+      <Container>
       <div>
+         <NavbarMenu />
         <h1>Restaurant List</h1>
         {this.state.list ? (
           <div>
@@ -71,7 +74,7 @@ export default class RestaurantList extends Component {
                     <td>{item.rating}</td>
                     <td>{item.address}</td>
                     <td><Link to={"/update/"+item.id}><FontAwesomeIcon icon={faEdit} color="orange" /></Link>
-                    <span onClick={()=>this.delete(item.id)}><FontAwesomeIcon icon={faTrash} color="red" /></span></td>
+                    <span onClick={()=>this.delete(item.id)}><FontAwesomeIcon icon={faTrash} color="red" cursor="pointer" /></span></td>
                   </tr>
                 ))}
               </tbody>
@@ -81,6 +84,7 @@ export default class RestaurantList extends Component {
           <p>Please Wait.....</p>
         )}
       </div>
+      </Container>
     );
   }
 }
