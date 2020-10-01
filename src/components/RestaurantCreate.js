@@ -33,14 +33,14 @@ result.json().then((resp)=>{
                  <NavbarMenu />
                  <h1>Restaurant Create</h1> 
                  <div>
-                     <input onChange={(event)=>{this.setState({name:event.target.value})} } placeholder="Restaurant Name"/> <br /> <br/>
+                     <input className="form-control" onChange={(event)=>{this.setState({name:event.target.value})} } placeholder="Restaurant Name"/> <br /> <br/>
 
-                     <input onChange={(event)=>{this.setState({email:event.target.value})} } placeholder="Restaurant Email"/> <br /> <br/>
+                     <input className="form-control" onChange={(event)=>{this.setState({email:event.target.value})} } placeholder="Restaurant Email"/> <br /> <br/>
 
-                     <input onChange={(event)=>{this.setState({rating:event.target.value})} } placeholder="Restaurant Rating"/> <br /> <br/>
+                     <input className="form-control" onChange={(event)=>{this.setState({rating:event.target.value})} } placeholder="Restaurant Rating"/> <br /> <br/>
 
-                     <input onChange={(event)=>{this.setState({address:event.target.value})} } placeholder="Restaurant Address"/> <br /> <br/>
-                     <button onClick={()=>{this.create()}}>Add Restaurant</button>
+                     <input className="form-control" onChange={(event)=>{this.setState({address:event.target.value})} } placeholder="Restaurant Address"/> <br /> <br/>
+                     <button className="btn btn-secondary" onClick={()=>{this.create()}}>Add Restaurant</button>
                  </div>
                  </Container>
             </div>
